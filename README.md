@@ -29,7 +29,7 @@ Please install Node and NPM globally.
 Test designed to be executed on **Windows**.<br>
 Execute batch file **build.bat** to build the project. This action is required once. <br>
 Execute batch file **start.bat** to start the microservices.<br>
-Open URL **http://localhost:1010** on browser to test the API Rest.<br>
+Open URL **http://localhost:8080** on browser to test the API Rest.<br>
 
 ## Notes to improve
 Different libraries for microservices on a monorepo could be handled using Nx and some framework like NestJs.
