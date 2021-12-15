@@ -1,21 +1,14 @@
 # test-node-oauth-rest
 
 ## Description
-Test for Conecta turismo by Lorenzo Portillo.<br>
 API Rest acceded by OAth authentication.
 
 ## Microservices:
-
 <ul>
-<li>API Rest</li>
 <li>OAuth</li>
+<li>API Rest</li>
+<li>DB</li>
 <li>Browser test</li>
-</ul>
-
-## Tools:
-<ul>
-<li>Swagger</li>
-<li>Docker container</li>
 </ul>
 
 ## Requirements
@@ -29,8 +22,9 @@ Please install Node and NPM globally.
 Test designed to be executed on **Windows**.<br>
 Execute batch file **build.bat** to build the project. This action is required once. <br>
 Execute batch file **start.bat** to start the microservices.<br>
-Open URL **http://localhost:8080** on browser to test the API Rest.<br>
+Open URL **http://localhost:8080** on browser to test the API Rest. Check console for responses.<br>
 
 ## Notes to improve
-Different libraries for microservices on a monorepo could be handled using Nx and some framework like NestJs.
-GraphQL could be added to the project to improve the performance of requests.
+Different libraries for microservices on a monorepo could be handled using **Nx** and some framework like **NestJs**.<br>
+**GraphQL** could be added to the project to improve the performance of requests.<br>
+**MongoDB** should be used instead *DB* microservice.

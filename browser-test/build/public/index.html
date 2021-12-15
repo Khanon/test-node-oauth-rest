@@ -19,50 +19,53 @@
     <button type="button" onclick="post1()">Post1</button>
 
     <script>
+        const getInit = {
+            method: 'GET'
+        };
+
+        const postInit = {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+        };
+
         const login = () => {
             console.log("auth/login");
             fetch('http://localhost:3010/auth/login', {
-                method: 'POST',
-                headers: {
-                   'Content-Type': 'application/json'
-                },
+                ...postInit,
                 body: JSON.stringify({
                    user: "user_name",
                    pass: "password"
                 })
             }).then((resp) => {
                 resp.json().then((r2) => {
-                    console.log("Login response:", r2);
+                    console.log("Response Login:", r2);
                 });
-            });
+            }).catch(console.log('Wrong request - auth/login'));
         }
 
         const get1 = () => {
-            console.log("get1");
-            fetch('http://localhost:3000/get1?user=usuario&pass=password', {
-                method: 'GET'
-             }).then((resp) => {
+            console.log("Request Get1");
+            fetch('http://localhost:3000/get1?user=usuario&pass=password', getInit).then((resp) => {
                 resp.json().then((r2) => {
-                    console.log("Get1 response:", r2);
+                    console.log("Response Get1:", r2);
                 });
-            });
+            }).catch(console.log('Wrong request - Get1'));
         }
 
         const post1 = () => {
-            console.log("post1");
+            console.log("Request Post1");
             fetch('http://localhost:3000/post1', {
-                method: 'POST',
-                headers: {
-                   'Content-Type': 'application/json'
-                },
+                ...postInit,
                 body: JSON.stringify({
                    a: 1, b: 2
                 })
             }).then((resp) => {
                 resp.json().then((r2) => {
-                    console.log("Post1 response:", r2);
+                    console.log("Response Post1:", r2);
                 });
-            });
+            }).catch(console.log('Wrong request - Post1'));
         }
     </script>
 </body>

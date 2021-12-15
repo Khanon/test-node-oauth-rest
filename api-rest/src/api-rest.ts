@@ -8,18 +8,6 @@ app.set("view options", { layout: true });
 app.use(cors());
 app.use(express.json());
 
-app.post("/auth/login", (req, res) => {
-    res.header('Content-Type', 'application/json');
-
-    console.log("auth/login body", req.body);
-    console.log("auth/login params", req.params);
-    console.log("auth/login query", req.query);
-
-    res.send(JSON.stringify({
-        key_auth:"value_auth"
-    }));
-});
-
 app.get("/get1", (req, res) => {
     res.header('Content-Type', 'application/json');
 
